@@ -1,0 +1,378 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  font-size: 15px;
+  padding: 2vmin 10vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+header {
+  width: 100%;
+  max-width: 80vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+header .icon_header h2 {
+  font-size: 4em;
+}
+header .burger_container {
+  display: flex;
+  align-items: center;
+}
+header .burger_container .burger_btn {
+  position: relative;
+  width: 3em;
+  height: 3em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  cursor: pointer;
+}
+header .burger_container .burger_btn::after {
+  content: "";
+  position: absolute;
+  bottom: 80%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 12.5vmin;
+  max-width: 2.5em;
+  height: 3px;
+  background-color: black;
+  transition: 0.5s ease;
+}
+header .burger_container .burger_btn::before {
+  content: "";
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 12.5vmin;
+  max-width: 2.5em;
+  height: 3px;
+  background-color: black;
+  transition: 0.5s ease;
+}
+header .burger_container .burger_btn .burger {
+  width: 12.5vmin;
+  max-width: 2.5em;
+  height: 3px;
+  background-color: black;
+  display: block;
+  transition: 0.2s linear;
+}
+header .burger_container .burger_btn.active .burger {
+  width: 0;
+  opacity: 0;
+}
+header .burger_container .burger_btn.active::after {
+  transform: rotate(45deg) translate(0.9em, 0.5em);
+}
+header .burger_container .burger_btn.active::before {
+  transform: rotate(-45deg) translate(0.9em, -0.5em);
+}
+header .burger_container .window_container {
+  display: none;
+}
+header .burger_container .window_container .shadow_window {
+  position: absolute;
+  top: 0;
+  left: 0vw;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+header .burger_container .window_container .burger_window {
+  position: absolute;
+  top: 0;
+  right: 0vw;
+  width: 0vw;
+  overflow: hidden;
+  height: 100vh;
+  background-color: white;
+}
+header .burger_container .window_container .burger_window nav {
+  width: 100%;
+  height: 100%;
+  padding: 5vmin;
+}
+header .burger_container .window_container .burger_window nav ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2em;
+  padding-bottom: 30vmin;
+}
+header .burger_container .window_container .burger_window nav ul li {
+  list-style: none;
+}
+header .burger_container .window_container .burger_window nav ul li a {
+  font-size: 2em;
+  color: #000;
+}
+@keyframes showBurgWindow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 70vw;
+  }
+}
+@keyframes showShadowWindow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes hideBurgWindow {
+  from {
+    width: 70vw;
+  }
+  to {
+    width: 0vw;
+  }
+}
+@keyframes hideShadowWindow {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+header .burger_container .window_container.active .shadow_window {
+  animation: showShadowWindow 0.75s ease forwards;
+}
+header .burger_container .window_container.active .burger_window {
+  animation: showBurgWindow 0.75s ease forwards;
+}
+header .burger_container .window_container.disabled .shadow_window {
+  animation: hideShadowWindow 0.75s ease forwards;
+}
+header .burger_container .window_container.disabled .burger_window {
+  animation: hideBurgWindow 0.75s ease forwards;
+}
+header .nav_menu {
+  display: none;
+}
+header .nav_menu nav {
+  padding: 3vmin;
+}
+header .nav_menu nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 4vmin;
+}
+header .nav_menu nav ul li {
+  list-style: none;
+}
+header .nav_menu nav ul li a {
+  color: hsl(236deg, 13%, 42%);
+  font-size: 1.25em;
+  transition: color 0.2s ease;
+}
+header .nav_menu nav ul li a:hover {
+  color: hsl(5deg, 85%, 63%);
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4vmin;
+}
+main .container .left_side {
+  display: flex;
+  flex-direction: column;
+  gap: 4vmin;
+}
+main .container .left_side .image {
+  grid-area: 1/1/2/3;
+}
+main .container .left_side .image img {
+  width: 100%;
+}
+main .container .left_side .heading {
+  grid-area: 2/1/3/2;
+}
+main .container .left_side .heading h3 {
+  white-space: pre-line;
+  font-size: 3em;
+}
+main .container .left_side .info {
+  grid-area: 2/2/3/3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5vmin;
+}
+main .container .left_side .info .content p {
+  font-size: 1.25em;
+  color: hsl(236deg, 13%, 42%);
+}
+main .container .left_side .info .button button {
+  text-transform: uppercase;
+  background-color: hsl(5deg, 85%, 63%);
+  width: 15em;
+  color: hsl(36deg, 100%, 99%);
+  font-weight: 800;
+  height: 3em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+main .container .left_side .info .button button:hover {
+  background-color: hsl(240deg, 100%, 5%);
+}
+main .container .right_side {
+  max-width: 20em;
+}
+main .container .right_side .aside_news {
+  height: 100%;
+  background-color: hsl(240deg, 100%, 5%);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+}
+main .container .right_side .aside_news .heading {
+  padding-top: 1em;
+}
+main .container .right_side .aside_news .heading h2 {
+  font-size: 2.25em;
+  color: hsl(35deg, 77%, 62%);
+}
+main .container .right_side .aside_news section {
+  padding-top: 4vmin;
+  line-height: 1.75em;
+}
+main .container .right_side .aside_news section h3 {
+  padding-bottom: 0.5em;
+}
+main .container .right_side .aside_news section h3 a {
+  color: hsl(36deg, 100%, 99%);
+  transition: color 0.2s ease;
+  font-size: 1.5em;
+}
+main .container .right_side .aside_news section h3 a:hover {
+  color: hsl(35deg, 77%, 62%);
+}
+main .container .right_side .aside_news section p {
+  color: hsl(233deg, 8%, 79%);
+}
+main .container .right_side .aside_news section:not(:last-child) {
+  padding-bottom: 4vmin;
+  border-bottom: 1px solid hsl(236deg, 13%, 42%);
+}
+
+footer {
+  padding-top: 5vmin;
+  padding-bottom: 2em;
+  padding-left: 4vmin;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+footer .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+footer .container section {
+  display: flex;
+  flex-direction: row;
+  gap: 4vmin;
+}
+footer .container section .img img {
+  min-height: 10em;
+  max-height: 20vmin;
+}
+footer .container section .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+footer .container section .content .number {
+  font-size: 1.25em;
+  color: hsl(233deg, 8%, 79%);
+}
+footer .container section .content .heading h4 {
+  max-width: 10em;
+}
+footer .container section .content .heading h4 a {
+  font-size: 1em;
+  transition: color 0.2s ease;
+}
+footer .container section .content .heading h4 a:hover {
+  color: hsl(5deg, 85%, 63%);
+}
+footer .container section .content .text {
+  max-width: 12em;
+}
+footer .container section .content .text p {
+  font-size: 0.8em;
+  color: hsl(236deg, 13%, 42%);
+}
+
+@media screen and (min-width: 1440px) {
+  header .burger_container {
+    display: none;
+  }
+  header .nav_menu {
+    display: block;
+  }
+  main .container {
+    flex-direction: row;
+    width: 100%;
+  }
+  main .container .left_side {
+    max-width: 60vw;
+    margin-right: 2em;
+    display: grid;
+    grid-template-columns: 0.8fr 1.25fr;
+    grid-row-gap: 2em;
+    grid-column-gap: 2em;
+  }
+  footer .container {
+    flex-direction: row;
+  }
+  footer .container section .content .number {
+    font-size: 3em;
+  }
+  footer .container section .content .heading h4 {
+    font-size: 2em;
+  }
+  footer .container section .content .text p {
+    font-size: 1.25em;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

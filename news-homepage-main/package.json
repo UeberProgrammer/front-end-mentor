@@ -1,0 +1,12 @@
+{
+  "name": "news-homepage-main",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass --watch assets/styles/scss:assets/styles/css"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "sass": "^1.57.1"
+  }
+}
