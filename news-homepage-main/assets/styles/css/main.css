@@ -20,7 +20,7 @@ a {
 
 header {
   width: 100%;
-  max-width: 80vw;
+  max-width: 2000px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -198,6 +198,8 @@ header .nav_menu nav ul li a:hover {
 
 main {
   width: 100%;
+  max-width: 2000px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -205,7 +207,7 @@ main {
 main .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   gap: 4vmin;
 }
 main .container .left_side {
@@ -295,8 +297,9 @@ main .container .right_side .aside_news section:not(:last-child) {
 footer {
   padding-top: 5vmin;
   padding-bottom: 2em;
-  padding-left: 4vmin;
   width: 100%;
+  max-width: 2000px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -304,7 +307,7 @@ footer {
 footer .container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 footer .container section {
   display: flex;
