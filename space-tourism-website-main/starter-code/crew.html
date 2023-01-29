@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="./assets/styles/css/crew.css">
+  <title>Frontend Mentor | Space tourism website</title>
+</head>
+<body>
+    <header>
+        <div class="icon_container">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"><g fill="none" fill-rule="evenodd"><circle cx="24" cy="24" r="24" fill="#FFF"/><path fill="#0B0D17" d="M24 0c0 16-8 24-24 24 15.718.114 23.718 8.114 24 24 0-16 8-24 24-24-16 0-24-8-24-24z"/></g></svg>
+        </div>
+        <div class="line_container">
+          <div class="line"></div>
+        </div>
+        <nav class="nav_menu">
+          <ul>
+            <li>
+              <a href="index.html">
+                <span class="link">
+                  Home
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="destination.html">
+                <span class="link">
+                  Destination
+                </span>
+              </a>
+            </li>
+            <li class="active">
+              <a href="crew.html">
+                <span class="link">
+                  Crew
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="technology.html">
+                <span class="link">
+                  Technology
+                </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="burger_container">
+          <div class="burger_btn">
+            <svg class="closed_burger" xmlns="http://www.w3.org/2000/svg" width="24" height="21"><g fill="#D0D6F9" fill-rule="evenodd"><path d="M0 0h24v3H0zM0 9h24v3H0zM0 18h24v3H0z"/></g></svg>
+            <svg class="open_burger hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="21"><g fill="#D0D6F9" fill-rule="evenodd"><path d="M2.575.954l16.97 16.97-2.12 2.122L.455 3.076z"/><path d="M.454 17.925L17.424.955l2.122 2.12-16.97 16.97z"/></g></svg>
+          </div>
+          <div class="burger_window">
+            <ul>
+              <li>
+                <a href="index.html">
+                  <span class="number">
+                    00 
+                  </span>
+                  <span class="link">
+                    Home
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="destination.html">
+                  <span class="number">
+                    01 
+                  </span>
+                  <span class="link">
+                    Destination
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="crew.html">
+                  <span class="number">
+                    02 
+                  </span>
+                  <span class="link">
+                    Crew
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="technology.html">
+                  <span class="number">
+                    03 
+                  </span>
+                  <span class="link">
+                    Technology
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </header>
+    <main>
+      <div class="heading">
+        <h2>
+            <span class="number">02</span> Meet your crew
+        </h2>
+      </div>
+      <div class="main_stuff">
+        <div class="image_container">
+          <div class="image">
+            <div class="image_line">
+              <img src="./assets/crew/image-douglas-hurley.png" alt="">
+              <img src="./assets/crew/image-mark-shuttleworth.png" alt="">
+              <img src="./assets/crew/image-victor-glover.png" alt="">
+              <img src="./assets/crew/image-anousheh-ansari.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="choose_crew_read_crew">
+          <div class="choose_crew">
+            <input type="radio" name="crew" id="first">
+            <label for="first" class="first"></label>
+            <input type="radio" name="crew" id="second">
+            <label for="second" class="second"></label>
+            <input type="radio" name="crew" id="third">
+            <label for="third" class="third"></label>
+            <input type="radio" name="crew" id="fourth">
+            <label for="fourth" class="fourth"></label>
+          </div>
+          <div class="crewmate_container">
+            <div class="crewmates">
+              <div class="crewmates_line">
+                <div class="crewmate">
+                  <div class="crewmate_job">
+                      <h3>
+                        Commander
+                      </h3>
+                  </div>
+                  <div class="crewmate_name">
+                      <h3>
+                        Douglas Hurley
+                      </h3>
+                  </div>
+                  <div class="crewmate_bio">
+                    <p>
+                      Douglas Gerald Hurley is an American engineer, former Marine Corps pilot 
+                      and former NASA astronaut. He launched into space for the third time as 
+                      commander of Crew Dragon Demo-2.
+                    </p>
+                  </div>
+                </div>
+                <div class="crewmate">
+                  <div class="crewmate_job">
+                      <h3>
+                          Mission Specialist
+                      </h3>
+                  </div>
+                  <div class="crewmate_name">
+                      <h3>
+                          Mark Shuttleworth
+                      </h3>
+                  </div>
+                  <div class="crewmate_bio">
+                    <p>
+                        Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind 
+                        the Linux-based Ubuntu operating system. Shuttleworth became the first South 
+                        African to travel to space as a space tourist.
+                    </p>
+                  </div>
+                </div>
+                <div class="crewmate">
+                  <div class="crewmate_job">
+                      <h3>
+                        Pilot
+                      </h3>
+                  </div>
+                  <div class="crewmate_name">
+                      <h3>
+                        Victor Glover
+                      </h3>
+                  </div>
+                  <div class="crewmate_bio">
+                    <p>
+                      Pilot on the first operational flight of the SpaceX Crew Dragon to the 
+                      International Space Station. Glover is a commander in the U.S. Navy where 
+                      he pilots an F/A-18.He was a crew member of Expedition 64, and served as a 
+                      station systems flight engineer. 
+                    </p>
+                  </div>
+                </div>
+                <div class="crewmate">
+                  <div class="crewmate_job">
+                      <h3>
+                        Flight Engineer
+                      </h3>
+                  </div>
+                  <div class="crewmate_name">
+                      <h3>
+                        Anousheh Ansari
+                      </h3>
+                  </div>
+                  <div class="crewmate_bio">
+                    <p>
+                      Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. 
+                      Ansari was the fourth self-funded space tourist, the first self-funded woman to 
+                      fly to the ISS, and the first Iranian in space.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./assets/scripts/index.js"></script>
+    <script src="./assets/scripts/crew.js"></script>
+</body>
+</html>

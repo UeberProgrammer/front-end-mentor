@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap');
+@mixin h1Bell150 {
+    font: 400 150px 'Bellefair';
+    text-transform: uppercase;
+}
+@mixin h2Bell100 {
+    font: 400 100px 'Bellefair';
+}
+@mixin h3Bell56 {
+    font: 400 56px 'Bellefair';
+}
+@mixin h4Bell32 {
+    font: 400 32px 'Bellefair';
+}
+@mixin h5Barl28 {
+    font: 400 28px 'Barlow Condensed';
+    letter-spacing: 4.75px;
+}
+@mixin sub1Bell28 {
+    font: 400 28px 'Bellefair';
+}
+@mixin sub2Bell14 {
+    font: 400 14px 'Bellefair';
+    letter-spacing: 2.35px;
+}
+@mixin navBarl16 {
+    font: 400 16px 'Barlow Condensed';
+    letter-spacing: 2.7px;
+}
+
+$dark: hsl(230, 35%, 7%);
+$gray: hsl(231, 77%, 90%);
+$white: #fff;
+
+
+$tabletW: 768px;
+$desktopW: 1440px;
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+}
+
+a {
+    color: $dark;
+    text-decoration: none;
+}
+

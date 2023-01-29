@@ -1,0 +1,522 @@
+@import 'settings';
+
+body {
+    background: url('../../crew/background-crew-mobile.jpg') no-repeat center fixed;
+    background-size: cover;
+}
+
+li {
+    list-style: none;
+}
+
+$imgW: 177px;
+$imgH: 222px;
+$infoH: 50vw;
+$infoW: 80vw;
+header {
+    a {
+        color: $white;
+    }
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    color: $white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 6vmin;
+    z-index: 2;
+
+    .icon_container {
+        padding-top: 24px;
+    }
+
+    .nav_menu {
+        display: none;
+        width: 450px;
+        height: 96px;
+        background-color: rgba(255,255,255, .06);
+        backdrop-filter: blur(2px);
+        
+        ul {
+            padding:0 45px;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4vmin;
+            li {
+                position: relative;
+                display: flex;
+                align-items: center;
+                height: 100%;
+                
+                a {
+                    @include navBarl16;
+                    text-transform: uppercase;
+                    opacity: 1;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+
+                    .link {
+                        display: flex;
+                        flex-direction: row;
+                        gap: .25em;
+                    }
+
+                    &:hover {
+                        &::before { 
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            width: 100%;
+                            height: 3px;
+                            background-color: $gray;
+                            opacity: .5;
+                        }
+                    }
+                }
+                
+                &.active {
+                    &::before { 
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                        height: 3px;
+                        background-color: $gray;
+                    }
+                }
+            }
+        }
+    }
+
+    .burger_container {
+        height: 42px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: .3s ease;
+        padding-top: 48px;
+        padding-right: 36px;
+
+        .burger_btn {
+            cursor: pointer;
+            transition: .3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+
+            svg {
+                position: absolute;
+                opacity: 1;
+                -webkit-transition: opacity .25s ease;
+                -moz-transition: opacity .25s ease;
+                -o-transition: opacity .25s ease;
+                transition: opacity .25s ease;
+
+                &.hidden {
+                    -webkit-transition: opacity .25s ease;
+                    -moz-transition: opacity .25s ease;
+                    -o-transition: opacity .25s ease;
+                    transition: opacity .25s ease;
+                    opacity: 0;
+                }
+            }
+
+        }
+        .burger_window {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0vw;
+            max-width: 25em;
+            height: 100vh;
+            background-color: transparent;
+            backdrop-filter: blur(4em);
+            overflow: hidden;
+            z-index: 1;
+            transition: width .5s ease;
+
+            ul {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 8vmin;
+                padding-top: 118px;
+                padding-left: 10vmin;
+                li {
+                    a {
+                        white-space: nowrap;
+                        color: $white;
+                        @include navBarl16;
+                        .number {
+                            padding-right: 2vmin;
+                            font-weight: 900;
+                        }
+                        .link {
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+
+            &.active {
+                transition: width .5s ease;
+                width: 65vw;
+            }
+        }
+    }
+}
+
+main {
+    min-height: 100%;
+    color: $white;
+    padding-top: 6em;
+
+    .heading {
+        padding-bottom: 2em;
+        text-align: center;
+        @include navBarl16;
+        text-transform: uppercase;
+        font-weight: 100;
+        font-size: 14px;
+
+        .number {
+            padding-right: 4vw;
+            color: rgba(150, 150, 150, 0.6);
+            font-weight: 900;
+        }
+    }
+
+    .main_stuff {
+        height: 100%;
+        padding: 0px 5vw 2em;
+        position: relative;
+        .image_container {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            border-bottom: 1px solid rgba(100, 100, 100, 0.6);
+
+            .image {
+                width: $imgW;
+                height: $imgH;
+                overflow: hidden;
+                .image_line {
+                    transition: .4s ease;
+                    width: 500vw;
+                    height: $imgH;
+                    display: flex;
+                    flex-direction: row;
+                    overflow: hidden;
+
+                    img {
+                        width: $imgW;
+                        height: $imgH;
+                    }
+                }
+            }
+        }
+        .choose_crew_read_crew {
+            width: 100%;
+            .choose_crew {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                gap: .5em;
+                margin: 2.5vh 0;
+    
+                input[type="radio"] {
+                    display: none;
+                }
+    
+                input:checked + label {
+                    background-color: $white;
+                }
+    
+    
+                label {
+                    cursor: pointer;
+                    width: 10px;
+                    height: 10px;
+                    background-color: rgba(100,100,100, .4);
+                    border-radius: 50%;
+    
+                }
+            }
+    
+            .crewmate_container {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                .crewmates {
+                    max-width: $infoW;
+                    min-height: $infoH;
+                    overflow: hidden;
+                    .crewmates_line {
+                        transition: 0.4s ease;
+                        width: 500vw;
+                        min-height: $infoH;
+                        display: flex;
+                        flex-direction: row;
+                        overflow: hidden;
+                        .crewmate {
+                            max-width: $infoW;
+                            min-height: $infoH;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            gap: 2vh;
+                            
+                            .crewmate_job {
+                                @include sub2Bell14;
+                                font-size: 1em;
+                                text-transform: uppercase;
+                                letter-spacing: 0;
+                                color: rgb(100,100,100);
+                            }
+                            .crewmate_name {
+                                @include sub1Bell28;
+                                font-size: 24px;
+                                text-transform: uppercase;
+                                text-align: center;
+                            }
+                            .crewmate_bio {
+                                @include navBarl16;
+                                font-size: 15px;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+@media screen and (min-width: $tabletW) {
+    $imgW: 457px;
+    $imgH: 522px;
+    $infoW: 458px;
+    $infoH: 232px;
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background: url('../../crew/background-crew-desktop.jpg') no-repeat center fixed;
+        background-size: cover;
+    }    
+
+    header {        
+        .nav_menu {
+            display: block;
+        }
+
+        .burger_container {
+            display: none;
+        }
+    }
+
+    main {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        padding-top: 144px;
+        
+        .heading {
+            text-align: left;
+            padding-left: 5vw;
+        }
+
+        .main_stuff {
+            flex: 1 1 auto;
+            padding-bottom: 0;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            .image_container {
+                border-bottom: none;
+                .image {
+                    width: $imgW;
+                    height: $imgH;
+                    .image_line {
+                        height: $imgH;
+                        img {
+                            width: $imgW;
+                            height: $imgH;
+                        }
+                    }
+                }
+            }
+
+            .choose_crew_read_crew {
+                max-width: 536px;
+                display: flex;
+                flex-direction: column-reverse;
+
+                .crewmate_container {
+                    .crewmates {
+                        max-width: $infoW;
+                        min-height: $infoH;
+                        .crewmates_line {
+                            min-height: $infoH;
+                            .crewmate {
+                                max-width: $infoW;
+                                min-height: $infoH;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $desktopW) {
+        
+    $imgW: 608px;
+    // $imgH: 800px;        
+    $imgH: 100%;
+    $infoW: 700px;
+    $infoH: 400px;
+
+    body {
+        background: url('../../crew/background-crew-tablet.jpg') no-repeat center fixed;
+        background-size: cover;
+    }
+
+    header {
+        padding-top: 40px;
+
+        .line_container {
+            width: 100%;
+            height: 96px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .line {
+                z-index: 2;
+                position: relative;
+                left: 1em;
+                width: 110%;
+                height: 1px;
+                background-color: rgba(150,150,150,.4);
+            }
+        }
+
+        .nav_menu {
+            width: 830px;
+            height: 96px;
+            background-color: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(10px);
+            position: relative;
+            
+            ul {
+                justify-content: center;
+                gap: 10vmin;
+                .number {
+                    color: $white;
+                    font-weight: 900;
+                }
+            }
+        }
+    }
+
+
+    main {
+        height: 100vh;
+        overflow: hidden;
+        padding-top: 15em;
+        .heading {
+            padding-left: 6vw;
+            padding-top: 0em;
+            text-align: left;
+        }
+        .main_stuff {
+            padding-bottom: 0;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            .image_container {
+                border-bottom: none;
+                .image {
+                    width: $imgW;
+                    height: $imgH;
+                    .image_line {
+                        height: $imgH;
+                        img {
+                            width: $imgW;
+                            height: $imgH;
+                        }
+                    }
+                }
+            }
+            .choose_crew_read_crew {
+                height: 100%;
+                display: flex;
+                flex-direction: column-reverse;
+                justify-content: center;
+                max-width: $infoW;
+                padding-bottom: 8em;
+                .choose_crew {
+                    justify-content: flex-start;
+                    gap: 1.5em;
+                    label {
+                        width: 15px;
+                        height: 15px;
+                    }
+                }
+                .crewmate_container {
+                    gap: 3em;
+                    
+                    .crewmates {
+                        max-width: $infoW;
+                        min-height: $infoH;
+                        .crewmates_line {
+                            min-height: $infoH;
+                            .crewmate {
+                                align-items: flex-start;
+                                max-width: $infoW;
+                                min-height: $infoH;
+        
+                                .crewmate_job {
+                                    font-size: 32px;
+                                }
+                                .crewmate_name {
+                                    font-size: 56px;
+                                    text-align: left;
+                                }
+                                .crewmate_bio {
+                                    font-size: 18px;
+                                    line-height: 32px;
+                                    text-align: left;
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+}

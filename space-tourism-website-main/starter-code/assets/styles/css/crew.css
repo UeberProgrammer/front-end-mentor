@@ -1,0 +1,473 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+}
+
+a {
+  color: hsl(230deg, 35%, 7%);
+  text-decoration: none;
+}
+
+body {
+  background: url("../../crew/background-crew-mobile.jpg") no-repeat center fixed;
+  background-size: cover;
+}
+
+li {
+  list-style: none;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 6vmin;
+  z-index: 2;
+}
+header a {
+  color: #fff;
+}
+header .icon_container {
+  padding-top: 24px;
+}
+header .nav_menu {
+  display: none;
+  width: 450px;
+  height: 96px;
+  background-color: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(2px);
+}
+header .nav_menu ul {
+  padding: 0 45px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4vmin;
+}
+header .nav_menu ul li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+header .nav_menu ul li a {
+  font: 400 16px "Barlow Condensed";
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+  opacity: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+header .nav_menu ul li a .link {
+  display: flex;
+  flex-direction: row;
+  gap: 0.25em;
+}
+header .nav_menu ul li a:hover::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background-color: hsl(231deg, 77%, 90%);
+  opacity: 0.5;
+}
+header .nav_menu ul li.active::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background-color: hsl(231deg, 77%, 90%);
+}
+header .burger_container {
+  height: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 0.3s ease;
+  padding-top: 48px;
+  padding-right: 36px;
+}
+header .burger_container .burger_btn {
+  cursor: pointer;
+  transition: 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+header .burger_container .burger_btn svg {
+  position: absolute;
+  opacity: 1;
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  -o-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+}
+header .burger_container .burger_btn svg.hidden {
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  -o-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+  opacity: 0;
+}
+header .burger_container .burger_window {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0vw;
+  max-width: 25em;
+  height: 100vh;
+  background-color: transparent;
+  backdrop-filter: blur(4em);
+  overflow: hidden;
+  z-index: 1;
+  transition: width 0.5s ease;
+}
+header .burger_container .burger_window ul {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8vmin;
+  padding-top: 118px;
+  padding-left: 10vmin;
+}
+header .burger_container .burger_window ul li a {
+  white-space: nowrap;
+  color: #fff;
+  font: 400 16px "Barlow Condensed";
+  letter-spacing: 2.7px;
+}
+header .burger_container .burger_window ul li a .number {
+  padding-right: 2vmin;
+  font-weight: 900;
+}
+header .burger_container .burger_window ul li a .link {
+  text-transform: uppercase;
+}
+header .burger_container .burger_window.active {
+  transition: width 0.5s ease;
+  width: 65vw;
+}
+
+main {
+  min-height: 100%;
+  color: #fff;
+  padding-top: 6em;
+}
+main .heading {
+  padding-bottom: 2em;
+  text-align: center;
+  font: 400 16px "Barlow Condensed";
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 14px;
+}
+main .heading .number {
+  padding-right: 4vw;
+  color: rgba(150, 150, 150, 0.6);
+  font-weight: 900;
+}
+main .main_stuff {
+  height: 100%;
+  padding: 0px 5vw 2em;
+  position: relative;
+}
+main .main_stuff .image_container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.6);
+}
+main .main_stuff .image_container .image {
+  width: 177px;
+  height: 222px;
+  overflow: hidden;
+}
+main .main_stuff .image_container .image .image_line {
+  transition: 0.4s ease;
+  width: 500vw;
+  height: 222px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+main .main_stuff .image_container .image .image_line img {
+  width: 177px;
+  height: 222px;
+}
+main .main_stuff .choose_crew_read_crew {
+  width: 100%;
+}
+main .main_stuff .choose_crew_read_crew .choose_crew {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.5em;
+  margin: 2.5vh 0;
+}
+main .main_stuff .choose_crew_read_crew .choose_crew input[type=radio] {
+  display: none;
+}
+main .main_stuff .choose_crew_read_crew .choose_crew input:checked + label {
+  background-color: #fff;
+}
+main .main_stuff .choose_crew_read_crew .choose_crew label {
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(100, 100, 100, 0.4);
+  border-radius: 50%;
+}
+main .main_stuff .choose_crew_read_crew .crewmate_container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+main .main_stuff .choose_crew_read_crew .crewmate_container .crewmates {
+  max-width: 80vw;
+  min-height: 50vw;
+  overflow: hidden;
+}
+main .main_stuff .choose_crew_read_crew .crewmate_container .crewmates .crewmates_line {
+  transition: 0.4s ease;
+  width: 500vw;
+  min-height: 50vw;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+main .main_stuff .choose_crew_read_crew .crewmate_container .crewmates .crewmates_line .crewmate {
+  max-width: 80vw;
+  min-height: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vh;
+}
+main .main_stuff .choose_crew_read_crew .crewmate_container .crewmates .crewmates_line .crewmate .crewmate_job {
+  font: 400 14px "Bellefair";
+  letter-spacing: 2.35px;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  color: rgb(100, 100, 100);
+}
+main .main_stuff .choose_crew_read_crew .crewmate_container .crewmates .crewmates_line .crewmate .crewmate_name {
+  font: 400 28px "Bellefair";
+  font-size: 24px;
+  text-transform: uppercase;
+  text-align: center;
+}
+main .main_stuff .choose_crew_read_crew .crewmate_container .crewmates .crewmates_line .crewmate .crewmate_bio {
+  font: 400 16px "Barlow Condensed";
+  letter-spacing: 2.7px;
+  font-size: 15px;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: url("../../crew/background-crew-desktop.jpg") no-repeat center fixed;
+    background-size: cover;
+  }
+  header .nav_menu {
+    display: block;
+  }
+  header .burger_container {
+    display: none;
+  }
+  main {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    padding-top: 144px;
+  }
+  main .heading {
+    text-align: left;
+    padding-left: 5vw;
+  }
+  main .main_stuff {
+    flex: 1 1 auto;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+  main .main_stuff .image_container {
+    border-bottom: none;
+  }
+  main .main_stuff .image_container .image {
+    width: 457px;
+    height: 522px;
+  }
+  main .main_stuff .image_container .image .image_line {
+    height: 522px;
+  }
+  main .main_stuff .image_container .image .image_line img {
+    width: 457px;
+    height: 522px;
+  }
+  main .main_stuff .choose_crew_read_crew {
+    max-width: 536px;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  main .main_stuff .choose_crew_read_crew .crewmate_container .crewmates {
+    max-width: 458px;
+    min-height: 232px;
+  }
+  main .main_stuff .choose_crew_read_crew .crewmate_container .crewmates .crewmates_line {
+    min-height: 232px;
+  }
+  main .main_stuff .choose_crew_read_crew .crewmate_container .crewmates .crewmates_line .crewmate {
+    max-width: 458px;
+    min-height: 232px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  body {
+    background: url("../../crew/background-crew-tablet.jpg") no-repeat center fixed;
+    background-size: cover;
+  }
+  header {
+    padding-top: 40px;
+  }
+  header .line_container {
+    width: 100%;
+    height: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  header .line_container .line {
+    z-index: 2;
+    position: relative;
+    left: 1em;
+    width: 110%;
+    height: 1px;
+    background-color: rgba(150, 150, 150, 0.4);
+  }
+  header .nav_menu {
+    width: 830px;
+    height: 96px;
+    background-color: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(10px);
+    position: relative;
+  }
+  header .nav_menu ul {
+    justify-content: center;
+    gap: 10vmin;
+  }
+  header .nav_menu ul .number {
+    color: #fff;
+    font-weight: 900;
+  }
+  main {
+    height: 100vh;
+    overflow: hidden;
+    padding-top: 15em;
+  }
+  main .heading {
+    padding-left: 6vw;
+    padding-top: 0em;
+    text-align: left;
+  }
+  main .main_stuff {
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  main .main_stuff .image_container {
+    border-bottom: none;
+  }
+  main .main_stuff .image_container .image {
+    width: 608px;
+    height: 100%;
+  }
+  main .main_stuff .image_container .image .image_line {
+    height: 100%;
+  }
+  main .main_stuff .image_container .image .image_line img {
+    width: 608px;
+    height: 100%;
+  }
+  main .main_stuff .choose_crew_read_crew {
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    max-width: 700px;
+    padding-bottom: 8em;
+  }
+  main .main_stuff .choose_crew_read_crew .choose_crew {
+    justify-content: flex-start;
+    gap: 1.5em;
+  }
+  main .main_stuff .choose_crew_read_crew .choose_crew label {
+    width: 15px;
+    height: 15px;
+  }
+  main .main_stuff .choose_crew_read_crew .crewmate_container {
+    gap: 3em;
+  }
+  main .main_stuff .choose_crew_read_crew .crewmate_container .crewmates {
+    max-width: 700px;
+    min-height: 400px;
+  }
+  main .main_stuff .choose_crew_read_crew .crewmate_container .crewmates .crewmates_line {
+    min-height: 400px;
+  }
+  main .main_stuff .choose_crew_read_crew .crewmate_container .crewmates .crewmates_line .crewmate {
+    align-items: flex-start;
+    max-width: 700px;
+    min-height: 400px;
+  }
+  main .main_stuff .choose_crew_read_crew .crewmate_container .crewmates .crewmates_line .crewmate .crewmate_job {
+    font-size: 32px;
+  }
+  main .main_stuff .choose_crew_read_crew .crewmate_container .crewmates .crewmates_line .crewmate .crewmate_name {
+    font-size: 56px;
+    text-align: left;
+  }
+  main .main_stuff .choose_crew_read_crew .crewmate_container .crewmates .crewmates_line .crewmate .crewmate_bio {
+    font-size: 18px;
+    line-height: 32px;
+    text-align: left;
+  }
+}
+
+/*# sourceMappingURL=crew.css.map */

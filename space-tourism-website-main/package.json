@@ -1,0 +1,13 @@
+{
+  "name": "space-tourism-website-main",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "compile:sass": "sass --watch starter-code/assets/styles/scss:starter-code/assets/styles/css"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.57.1"
+  }
+}

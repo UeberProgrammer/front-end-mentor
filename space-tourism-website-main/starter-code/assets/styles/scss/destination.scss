@@ -1,0 +1,430 @@
+@import 'settings';
+
+body {
+    background: url('../../destination/background-destination-mobile.jpg') no-repeat center fixed;
+    background-size: cover;
+}
+
+li {
+    list-style: none;
+}
+
+header {
+    a {
+        color: $white;
+    }
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    color: $white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 6vmin;
+    z-index: 2;
+
+    .icon_container {
+        padding-top: 24px;
+    }
+
+    .nav_menu {
+        display: none;
+        width: 450px;
+        height: 96px;
+        background-color: rgba(255,255,255, .06);
+        backdrop-filter: blur(2px);
+        
+        ul {
+            padding:0 45px;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4vmin;
+            li {
+                position: relative;
+                display: flex;
+                align-items: center;
+                height: 100%;
+                
+                a {
+                    @include navBarl16;
+                    text-transform: uppercase;
+                    opacity: 1;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+
+                    .link {
+                        display: flex;
+                        flex-direction: row;
+                        gap: .25em;
+                    }
+                    
+                    &:hover {
+                        &::before { 
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            width: 100%;
+                            height: 3px;
+                            background-color: $gray;
+                            opacity: .5;
+                        }
+                    }
+                }
+                
+                &.active {
+                    &::before { 
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                        height: 3px;
+                        background-color: $gray;
+                    }
+                }
+            }
+        }
+    }
+
+    .burger_container {
+        height: 42px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: .3s ease;
+        padding-top: 48px;
+        padding-right: 36px;
+
+        .burger_btn {
+            cursor: pointer;
+            transition: .3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+
+            svg {
+                position: absolute;
+                opacity: 1;
+                -webkit-transition: opacity .25s ease;
+                -moz-transition: opacity .25s ease;
+                -o-transition: opacity .25s ease;
+                transition: opacity .25s ease;
+
+                &.hidden {
+                    -webkit-transition: opacity .25s ease;
+                    -moz-transition: opacity .25s ease;
+                    -o-transition: opacity .25s ease;
+                    transition: opacity .25s ease;
+                    opacity: 0;
+                }
+            }
+
+        }
+        .burger_window {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0vw;
+            max-width: 25em;
+            height: 100vh;
+            background-color: transparent;
+            backdrop-filter: blur(4em);
+            overflow: hidden;
+            z-index: 1;
+            transition: width .5s ease;
+
+            ul {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 8vmin;
+                padding-top: 118px;
+                padding-left: 10vmin;
+                li {
+                    a {
+                        white-space: nowrap;
+                        color: $white;
+                        @include navBarl16;
+                        .number {
+                            padding-right: 2vmin;
+                            font-weight: 900;
+                        }
+                        .link {
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+
+            &.active {
+                transition: width .5s ease;
+                width: 65vw;
+            }
+        }
+    }
+}
+
+main {
+    color: $white;
+    margin-top: 7em;
+    width: 100%;
+    margin-bottom: 5vh;
+    input[type="radio"] {
+        display: none;
+    }
+
+    .heading {
+        padding-bottom: 5vh;
+        text-align: center;
+        @include navBarl16;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 20px;
+        .number {
+            padding-right: 4vw;
+            color: rgba(150, 150, 150, 0.6);
+            font-weight: 900;
+        }
+    }
+    .main_stuff_container {
+        .image_container {
+            text-align: center;
+            padding-bottom: 5vh;
+            img {
+                width: 170px;
+                height: 170px;
+            }
+        }
+        .main_stuff {
+            width: 100%;
+            .choose_planets {
+                height: 5em;
+                padding-bottom: 3em;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                gap: 5vmin;
+                label {
+                    @include sub2Bell14;
+                    font-family: 'Barlow Condensed', sans-serif;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    &:hover {
+                        border-bottom: 2px solid rgba(150, 150, 150, 0.6);
+                    }
+                    &.active {
+                        border-bottom: 2px solid $white;
+                        padding-bottom: 1em;
+                    }
+                }
+            }
+            .destination_description {
+                display: flex;
+                flex-direction: column;
+                gap: 2vh;
+                h1 {
+                    @include h3Bell56;
+                    text-transform: uppercase;
+                    text-align: center;
+                }
+                .description {
+                    width: calc(100% - 48px);
+                    padding-bottom: 2em;
+                    @include navBarl16;
+                    margin: 0 24px;
+                    text-align: center;
+                    color: $gray;
+                    letter-spacing: 1px;
+                    line-height: 1.75em;
+                    border-bottom: 1px solid rgba(150, 150, 150, 0.6);
+                }
+                .destination_stats {
+                    h4 {
+                        @include navBarl16;
+                        font-size: 14px;
+                        text-transform: uppercase;
+                    }
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    .average_distance {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 3vh;
+                        margin-top: 3vh;
+                        margin-bottom: 2vh;
+                        
+                        .distance {
+                            text-transform: uppercase;
+                            @include sub1Bell28;
+                        }
+                    }
+                    .travel_time {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 3vh;
+        
+                        .travel {
+                            text-transform: uppercase;
+                            @include sub1Bell28;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $tabletW) {
+    body {
+        background: url('../../destination/background-destination-tablet.jpg') no-repeat center fixed;
+        background-size: cover;
+    }
+
+    header {
+        .nav_menu {
+            display: block;
+        }
+
+        .burger_container {
+            display: none;
+        }
+    }
+
+    main {
+        margin-top: 9em;
+        .heading {
+            padding-left: 5vw;
+            text-align: left;
+        }
+        .main_stuff_container {
+            .image_container {
+                img {
+                    width: 300px;
+                    height: 300px;
+                }
+            }
+            .main_stuff {
+                .destination_description {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    
+                    .description {
+                        width: 573px;
+                        height: 8em;
+                    }
+
+                    .destination_stats {
+                        flex-direction: row;
+                        justify-content: space-evenly;
+                        .average_distance {
+                            margin-top: 0;
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $desktopW) {
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background: url('../../destination/background-destination-desktop.jpg') no-repeat center fixed;
+        background-size: cover;
+    }    
+
+    header {
+        padding-top: 40px;
+
+        .line_container {
+            width: 100%;
+            height: 96px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .line {
+                z-index: 2;
+                position: relative;
+                left: 1em;
+                width: 110%;
+                height: 1px;
+                background-color: rgba(150,150,150,.4);
+            }
+        }
+
+        .nav_menu {
+            width: 830px;
+            height: 96px;
+            background-color: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(10px);
+            position: relative;
+            
+            ul {
+                justify-content: center;
+                gap: 10vmin;
+                .number {
+                    color: $white;
+                    font-weight: 900;
+                }
+            }
+        }
+    }
+
+    main {
+        margin-top: 12em;
+        
+        .main_stuff_container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+
+            .image_container {
+                text-align: center;
+                width: 100%;
+                img {
+                    width: 445px;
+                    height: 445px;
+                }
+            }
+
+            .main_stuff {
+                width: 100%;
+
+                .choose_planets {
+                    justify-content: flex-start;
+                }
+                .destination_description {
+                    h1 {
+                        width: 100%;
+                        text-align: left;
+                        @include h2Bell100;
+                    }
+                }
+                .description {
+                    width: 100% !important;
+                    text-align: left !important;
+                    max-width: 45vw;
+                    margin: 0 !important; 
+                    margin-right: 5em !important;
+                }
+            }
+        }
+    }
+}
+

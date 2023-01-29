@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="./assets/styles/css/destination.css">
+  <title>Frontend Mentor | Space tourism website</title>
+</head>
+<body>
+    <header>
+        <div class="icon_container">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"><g fill="none" fill-rule="evenodd"><circle cx="24" cy="24" r="24" fill="#FFF"/><path fill="#0B0D17" d="M24 0c0 16-8 24-24 24 15.718.114 23.718 8.114 24 24 0-16 8-24 24-24-16 0-24-8-24-24z"/></g></svg>
+          </div>
+          <div class="line_container">
+            <div class="line"></div>
+          </div>
+          <nav class="nav_menu">
+            <ul>
+              <li>
+                <a href="index.html">
+                  <span class="link">
+                    Home
+                  </span>
+                </a>
+              </li>
+              <li class="active">
+                <a href="destination.html">
+                  <span class="link">
+                    Destination
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="crew.html">
+                  <span class="link">
+                    Crew
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="technology.html">
+                  <span class="link">
+                    Technology
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="burger_container">
+            <div class="burger_btn">
+              <svg class="closed_burger" xmlns="http://www.w3.org/2000/svg" width="24" height="21"><g fill="#D0D6F9" fill-rule="evenodd"><path d="M0 0h24v3H0zM0 9h24v3H0zM0 18h24v3H0z"/></g></svg>
+              <svg class="open_burger hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="21"><g fill="#D0D6F9" fill-rule="evenodd"><path d="M2.575.954l16.97 16.97-2.12 2.122L.455 3.076z"/><path d="M.454 17.925L17.424.955l2.122 2.12-16.97 16.97z"/></g></svg>
+            </div>
+            <div class="burger_window">
+              <ul>
+                <li>
+                  <a href="index.html">
+                    <span class="number">
+                      00 
+                    </span>
+                    <span class="link">
+                      Home
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="destination.html">
+                    <span class="number">
+                      01 
+                    </span>
+                    <span class="link">
+                      Destination
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="crew.html">
+                    <span class="number">
+                      02 
+                    </span>
+                    <span class="link">
+                      Crew
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="technology.html">
+                    <span class="number">
+                      03 
+                    </span>
+                    <span class="link">
+                      Technology
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+    </header>
+    <main>
+        <div class="heading"><span class="number">01</span>Pick your destination</div>
+        <div class="main_stuff_container">
+          <div class="image_container">
+            <img class="image" src="" alt="">
+          </div>
+          <div class="main_stuff">
+            <div class="choose_planets">
+              <input type="radio" name="planet" id="moon">
+              <label class="planets_label" for="moon" class="active">Moon</label>
+              <input type="radio" name="planet" id="mars">
+              <label class="planets_label" for="mars">Mars</label>
+              <input type="radio" name="planet" id="europa">
+              <label class="planets_label" for="europa">Europa</label>
+              <input type="radio" name="planet" id="titan">
+              <label class="planets_label" for="titan">Titan</label>
+            </div>
+            <div class="destination_description">
+              <h1 class="planet"></h1>
+              <p class="description"></p>
+              <div class="destination_stats">
+                <div class="average_distance">
+                  <h4>Avg. distance</h4>
+                  <p class="distance"></p>
+                </div>
+                <div class="travel_time">
+                  <h4>Est. travel time</h4>
+                  <p class="travel"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </main>
+    <script src="./assets/scripts/index.js"></script>
+    <script src="./assets/scripts/destination.js"></script>
+</body>
+</html>
